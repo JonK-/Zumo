@@ -1,26 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlayerObject : NetworkBehaviour 
 {
-	public int PlayerScore = 0;
+	// Fields
 
+	// Attached Objects
 	public SpriteRenderer PlayerImage;
-
-
-	void Start () 
-	{
-
-	}
 
 	public override void OnStartLocalPlayer()
 	{
 		PlayerImage.color = Color.blue;
 	}
 
-	void Update () 
+	public void Update()
 	{
 		// TODO : for testing
 
@@ -37,21 +30,12 @@ public class PlayerObject : NetworkBehaviour
 
 		if (Input.GetKeyDown (KeyCode.A)) 
 		{
-			AddPlayerScore ();
+			Debug.Log ("### A PRESSED");
+			GameManager.Instance.AddPlayerScore();
 		} 
 		else if (Input.GetKeyDown (KeyCode.D)) 
 		{
-			SubtractPlayerScore ();
+			GameManager.Instance.SubtractPlayerScore ();
 		}
-	}
-
-	public void AddPlayerScore (int amount = 10)
-	{
-		PlayerScore += amount;
-	}
-
-	public void SubtractPlayerScore (int amount = 10)
-	{
-		PlayerScore -= amount;
 	}
 }

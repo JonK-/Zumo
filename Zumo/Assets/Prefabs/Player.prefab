@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerScore: 0
   PlayerImage: {fileID: 212054260933953018}
+  ScoreUI: {fileID: 114561049836207940, guid: 07de2da1f25794361ae2860f66ef4d18, type: 2}
 --- !u!212 &212054260933953018
 SpriteRenderer:
   m_ObjectHideFlags: 1
